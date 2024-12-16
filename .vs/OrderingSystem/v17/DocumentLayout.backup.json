@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\yks\\Trial\\OrderingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\dal\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\dal\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\dal\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\dal\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\models\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\dal\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\dal\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|d:\\yks\\trial\\orderingsystem\\orderingsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5B5E54B-34D3-47D9-BA44-C02615C540A2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Program.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Program.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Program.cs",
+              "RelativeToolTip": "OrderingSystem\\Program.cs",
+              "ViewState": "AgIAABMAAADAaGZmZuYcwBgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:59:34.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Repository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\DAL\\Repository\\OrderRepository.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "OrderingSystem\\DAL\\Repository\\OrderRepository.cs",
+              "ViewState": "AgIAAAkAAACgzMzMzMwrwAsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:45:11.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "OrderingSystem\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAWwBcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:50:45.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\DAL\\Repository\\CustomerRepository.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "OrderingSystem\\DAL\\Repository\\CustomerRepository.cs",
+              "ViewState": "AgIAABgAAADAzszMzMwXwCYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:43:01.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "OrderingSystem\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAsAAABAzczMzEwXwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:49:11.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\DAL\\AppDBContext.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\AppDBContext.cs",
+              "RelativeToolTip": "OrderingSystem\\DAL\\AppDBContext.cs",
+              "ViewState": "AgIAACcAAACAZmZmZiYjwDwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:03:16.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Models\\OrderProduct.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\OrderProduct.cs",
+              "RelativeToolTip": "OrderingSystem\\Models\\OrderProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T17:19:00.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Models\\Product.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Product.cs",
+              "RelativeToolTip": "OrderingSystem\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:09:36.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Interface\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\DAL\\Interface\\ICustomerRepository.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\DAL\\Interface\\ICustomerRepository.cs",
+              "RelativeToolTip": "OrderingSystem\\DAL\\Interface\\ICustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:41:17.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Models\\Customer.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Customer.cs",
+              "RelativeToolTip": "OrderingSystem\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:02:18.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Models\\Order.cs",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\Models\\Order.cs",
+              "RelativeToolTip": "OrderingSystem\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:16:24.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "OrderingSystem\\appsettings.json",
+              "ToolTip": "D:\\yks\\Trial\\OrderingSystem\\OrderingSystem\\appsettings.json",
+              "RelativeToolTip": "OrderingSystem\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-16T16:07:33.97Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
