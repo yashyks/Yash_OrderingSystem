@@ -17,7 +17,7 @@ This is a simplified Order Processing System built with .NET Core and Entity Fra
    Open a terminal/command prompt and run the following command to clone the repository:
 
    ```bash
-   git clone https://github.com/yashyks/Yash_OrderSystem.git
+   https://github.com/yashyks/Yash_OrderingSystem.git
 
 2. Restore Dependencies: Run the following command to restore the required NuGet packages:
 dotnet restore
