@@ -1,0 +1,581 @@
+2024-12-17 00:41:01.2204 Info Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - - - 
+2024-12-17 00:41:01.3014 Info Application started. Press Ctrl+C to shut down. 
+2024-12-17 00:41:01.3091 Info Hosting environment: Development 
+2024-12-17 00:41:01.3091 Info Content root path: D:\yks\Trial\OrderingSystem\OrderingSystem 
+2024-12-17 00:41:01.5020 Info Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 
+2024-12-17 00:41:01.5020 Info Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 
+2024-12-17 00:41:01.5125 Info Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - 200 - text/html;charset=utf-8 297.8449ms 
+2024-12-17 00:41:01.5125 Info Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 6.7515ms 
+2024-12-17 00:41:01.5550 Info Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 53.1964ms 
+2024-12-17 00:41:01.6198 Info Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - - - 
+2024-12-17 00:41:01.6423 Info Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 22.4998ms 
+2024-12-17 00:41:20.8995 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/8 - - - 
+2024-12-17 00:41:20.8995 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:41:20.9608 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 00:41:27.9341 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2024-12-17 00:41:28.0976 Info Executed DbCommand (35ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 00:41:48.7787 Info Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'. 
+2024-12-17 00:41:48.8180 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 27851.6757ms 
+2024-12-17 00:41:48.8180 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:41:48.8270 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/8 - 404 - application/problem+json;+charset=utf-8 27927.6386ms 
+2024-12-17 00:43:54.1750 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/1 - - - 
+2024-12-17 00:43:54.1750 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:43:54.1804 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 00:43:57.1480 Info Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 00:43:57.2488 Info Executing OkObjectResult, writing value of type 'OrderingSystem.Models.Customer'. 
+2024-12-17 00:43:57.2694 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 3088.9325ms 
+2024-12-17 00:43:57.2694 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:43:57.2694 Error An unhandled exception has occurred while executing the request. System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles. Path: $.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.Customer.Orders.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-17 00:43:57.3333 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/1 - 500 - text/plain;+charset=utf-8 3159.7789ms 
+2024-12-17 00:44:14.3899 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/1 - - - 
+2024-12-17 00:44:14.3899 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:44:14.3899 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 00:44:16.7812 Info Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 00:44:58.2940 Info Executing OkObjectResult, writing value of type 'System.String'. 
+2024-12-17 00:44:58.2940 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 43911.026ms 
+2024-12-17 00:44:58.2940 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 00:44:58.3058 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/1 - 200 - text/plain;+charset=utf-8 43916.0354ms 
+2024-12-17 00:48:40.2309 Info Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - - - 
+2024-12-17 00:48:40.2309 Info Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - 200 - text/html;charset=utf-8 12.3699ms 
+2024-12-17 00:48:40.2560 Info Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 
+2024-12-17 00:48:40.2560 Info Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 
+2024-12-17 00:48:40.2560 Info Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.9035ms 
+2024-12-17 00:48:40.2655 Info Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.4908ms 
+2024-12-17 00:48:40.3500 Info Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - - - 
+2024-12-17 00:48:40.3577 Info Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 7.7149ms 
+2024-12-17 01:01:37.4098 Info Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - - - 
+2024-12-17 01:01:37.4206 Info Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - 200 - text/html;charset=utf-8 10.8596ms 
+2024-12-17 01:01:37.4317 Info Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 
+2024-12-17 01:01:37.4317 Info Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 
+2024-12-17 01:01:37.4317 Info Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 1.1449ms 
+2024-12-17 01:01:37.4486 Info Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 16.9797ms 
+2024-12-17 01:01:37.5279 Info Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - - - 
+2024-12-17 01:01:37.5279 Info Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 5.9667ms 
+2024-12-17 01:01:55.2275 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/1 - - - 
+2024-12-17 01:01:55.2282 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:01:55.2282 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 01:01:58.8499 Info Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 01:01:58.8576 Info Executing OkObjectResult, writing value of type '<>f__AnonymousType8`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], OrderingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:01:58.8576 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 3628.8436ms 
+2024-12-17 01:01:58.8576 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:01:58.8576 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/1 - 200 - application/json;+charset=utf-8 3636.5630ms 
+2024-12-17 01:02:16.6268 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer - - - 
+2024-12-17 01:02:16.6268 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetAllCustomers (OrderingSystem)' 
+2024-12-17 01:02:16.6268 Info Route matched with {action = "GetAllCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCustomers() on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 01:02:18.9196 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2024-12-17 01:02:18.9196 Info Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM "Customers" AS "c"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c"."Id" = "s0"."CustomerId"
+ORDER BY "c"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 01:02:20.7561 Info Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:02:20.7561 Info Executed action OrderingSystem.Controllers.CustomerController.GetAllCustomers (OrderingSystem) in 4125.5512ms 
+2024-12-17 01:02:20.7561 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetAllCustomers (OrderingSystem)' 
+2024-12-17 01:02:20.7607 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer - 200 - application/json;+charset=utf-8 4133.9156ms 
+2024-12-17 01:03:03.7804 Info Request starting HTTP/2 POST https://localhost:44354/api/Order - application/json 52 
+2024-12-17 01:03:03.7804 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:03:03.7804 Info Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(OrderingSystem.Controllers.OrderCreationRequest) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:03:10.5976 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1 
+2024-12-17 01:03:12.1878 Info Executed DbCommand (1ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Orders" AS "o"
+    WHERE "o"."CustomerId" = @__customerId_0 AND NOT ("o"."IsFulfilled")) 
+2024-12-17 01:03:22.2894 Info Executing BadRequestObjectResult, writing value of type 'System.String'. 
+2024-12-17 01:03:22.2901 Info Executed action OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem) in 18504.1916ms 
+2024-12-17 01:03:22.2901 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:03:22.2901 Info Request finished HTTP/2 POST https://localhost:44354/api/Order - 400 - text/plain;+charset=utf-8 18510.2613ms 
+2024-12-17 01:04:19.6848 Info Request starting HTTP/2 POST https://localhost:44354/api/Order - application/json 52 
+2024-12-17 01:04:19.6848 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:04:19.7187 Info Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(OrderingSystem.Controllers.OrderCreationRequest) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:04:25.6784 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1 
+2024-12-17 01:04:28.1159 Info Executed DbCommand (0ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Orders" AS "o"
+    WHERE "o"."CustomerId" = @__customerId_0 AND NOT ("o"."IsFulfilled")) 
+2024-12-17 01:04:30.3583 Info Executed DbCommand (6ms) [Parameters=[@__productIds_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."Price"
+FROM "Products" AS "p"
+WHERE "p"."Id" IN (
+    SELECT "p0"."value"
+    FROM json_each(@__productIds_0) AS "p0"
+) 
+2024-12-17 01:04:44.0695 Info Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Orders" ("CustomerId", "IsFulfilled")
+VALUES (@p0, @p1)
+RETURNING "Id"; 
+2024-12-17 01:04:44.0852 Info Executed DbCommand (0ms) [Parameters=[@p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "OrderProducts" ("OrderId", "ProductId")
+VALUES (@p2, @p3); 
+2024-12-17 01:04:44.0852 Info Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "OrderProducts" ("OrderId", "ProductId")
+VALUES (@p0, @p1); 
+2024-12-17 01:04:53.5165 Info Executing OkObjectResult, writing value of type 'System.String'. 
+2024-12-17 01:04:53.5165 Info Executed action OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem) in 33797.4365ms 
+2024-12-17 01:04:53.5165 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:04:53.5165 Info Request finished HTTP/2 POST https://localhost:44354/api/Order - 200 - text/plain;+charset=utf-8 33833.4555ms 
+2024-12-17 01:05:11.9774 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/2 - - - 
+2024-12-17 01:05:11.9779 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:05:11.9779 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 01:05:14.9231 Info Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 01:05:14.9231 Info Executing OkObjectResult, writing value of type '<>f__AnonymousType8`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], OrderingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:05:14.9231 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 2947.6779ms 
+2024-12-17 01:05:14.9231 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:05:14.9231 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/2 - 200 - application/json;+charset=utf-8 2948.9607ms 
+2024-12-17 01:05:56.0467 Info Request starting HTTP/2 POST https://localhost:44354/api/Order - application/json 52 
+2024-12-17 01:05:56.0467 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:05:56.0467 Info Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(OrderingSystem.Controllers.OrderCreationRequest) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:05:57.8277 Info Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1 
+2024-12-17 01:05:57.8277 Info Executed DbCommand (0ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Orders" AS "o"
+    WHERE "o"."CustomerId" = @__customerId_0 AND NOT ("o"."IsFulfilled")) 
+2024-12-17 01:05:57.8277 Info Executing BadRequestObjectResult, writing value of type 'System.String'. 
+2024-12-17 01:05:57.8277 Info Executed action OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem) in 1780.4441ms 
+2024-12-17 01:05:57.8277 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:05:57.8277 Info Request finished HTTP/2 POST https://localhost:44354/api/Order - 400 - text/plain;+charset=utf-8 1784.6605ms 
+2024-12-17 01:06:05.7672 Info Request starting HTTP/2 GET https://localhost:44354/api/Customer/2 - - - 
+2024-12-17 01:06:05.7672 Info Executing endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:06:05.7672 Info Route matched with {action = "GetCustomerById", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomerById(Int32) on controller OrderingSystem.Controllers.CustomerController (OrderingSystem). 
+2024-12-17 01:06:08.1670 Info Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c0"."Id", "c0"."Age", "c0"."Email", "c0"."Name", "s0"."Id", "s0"."CustomerId", "s0"."IsFulfilled", "s0"."OrderId", "s0"."ProductId", "s0"."Id0", "s0"."Name", "s0"."Price"
+FROM (
+    SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+    FROM "Customers" AS "c"
+    WHERE "c"."Id" = @__id_0
+    LIMIT 1
+) AS "c0"
+LEFT JOIN (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id" AS "Id0", "s"."Name", "s"."Price"
+    FROM "Orders" AS "o"
+    LEFT JOIN (
+        SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+        FROM "OrderProducts" AS "o0"
+        INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+    ) AS "s" ON "o"."Id" = "s"."OrderId"
+) AS "s0" ON "c0"."Id" = "s0"."CustomerId"
+ORDER BY "c0"."Id", "s0"."Id", "s0"."OrderId", "s0"."ProductId" 
+2024-12-17 01:06:08.1670 Info Executing OkObjectResult, writing value of type '<>f__AnonymousType8`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], OrderingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:06:08.1670 Info Executed action OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem) in 2401.728ms 
+2024-12-17 01:06:08.1670 Info Executed endpoint 'OrderingSystem.Controllers.CustomerController.GetCustomerById (OrderingSystem)' 
+2024-12-17 01:06:08.1670 Info Request finished HTTP/2 GET https://localhost:44354/api/Customer/2 - 200 - application/json;+charset=utf-8 2402.5410ms 
+2024-12-17 01:06:24.4049 Info Request starting HTTP/2 POST https://localhost:44354/api/Order - application/json 52 
+2024-12-17 01:06:24.4049 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:06:24.4049 Info Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(OrderingSystem.Controllers.OrderCreationRequest) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:06:28.9703 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "c"."Id", "c"."Age", "c"."Email", "c"."Name"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1 
+2024-12-17 01:06:30.5791 Info Executed DbCommand (0ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Orders" AS "o"
+    WHERE "o"."CustomerId" = @__customerId_0 AND NOT ("o"."IsFulfilled")) 
+2024-12-17 01:06:42.7286 Info Executing BadRequestObjectResult, writing value of type 'System.String'. 
+2024-12-17 01:06:42.7286 Info Executed action OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem) in 18323.5746ms 
+2024-12-17 01:06:42.7286 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.CreateOrder (OrderingSystem)' 
+2024-12-17 01:06:42.7286 Info Request finished HTTP/2 POST https://localhost:44354/api/Order - 400 - text/plain;+charset=utf-8 18324.4792ms 
+2024-12-17 01:08:49.8091 Info Request starting HTTP/2 GET https://localhost:44354/api/Order/1 - - - 
+2024-12-17 01:08:49.8091 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem)' 
+2024-12-17 01:08:49.8091 Info Route matched with {action = "GetOrderById", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(Int32) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:08:57.0278 Info Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "o1"."Id", "o1"."CustomerId", "o1"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id", "s"."Name", "s"."Price"
+FROM (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled"
+    FROM "Orders" AS "o"
+    WHERE "o"."Id" = @__id_0
+    LIMIT 1
+) AS "o1"
+LEFT JOIN (
+    SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+    FROM "OrderProducts" AS "o0"
+    INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+) AS "s" ON "o1"."Id" = "s"."OrderId"
+ORDER BY "o1"."Id", "s"."OrderId", "s"."ProductId" 
+2024-12-17 01:09:10.9891 Info Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[OrderingSystem.Models.Order, OrderingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:09:10.9972 Info Executed action OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem) in 21179.8931ms 
+2024-12-17 01:09:10.9972 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem)' 
+2024-12-17 01:09:10.9972 Error An unhandled exception has occurred while executing the request. System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles. Path: $.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.OrderProducts.Order.Id.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsync(PipeWriter pipeWriter, T rootValue, Int32 flushThreshold, CancellationToken cancellationToken, Object rootValueBoxed)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-17 01:09:10.9972 Info Request finished HTTP/2 GET https://localhost:44354/api/Order/1 - 500 - text/plain;+charset=utf-8 21198.4868ms 
+2024-12-17 01:11:13.6413 Info Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - - - 
+2024-12-17 01:11:13.6494 Info Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - 200 - text/html;charset=utf-8 8.1582ms 
+2024-12-17 01:11:13.6494 Info Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 
+2024-12-17 01:11:13.6494 Info Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 
+2024-12-17 01:11:13.6494 Info Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 0.9257ms 
+2024-12-17 01:11:13.6781 Info Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 14.1575ms 
+2024-12-17 01:11:13.8957 Info Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - - - 
+2024-12-17 01:11:13.9013 Info Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 5.4917ms 
+2024-12-17 01:11:31.0615 Info Request starting HTTP/2 GET https://localhost:44354/api/Order/1 - - - 
+2024-12-17 01:11:31.0615 Info Executing endpoint 'OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem)' 
+2024-12-17 01:11:31.0615 Info Route matched with {action = "GetOrderById", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderById(Int32) on controller OrderingSystem.Controllers.OrderController (OrderingSystem). 
+2024-12-17 01:11:35.1465 Info Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT "o1"."Id", "o1"."CustomerId", "o1"."IsFulfilled", "s"."OrderId", "s"."ProductId", "s"."Id", "s"."Name", "s"."Price"
+FROM (
+    SELECT "o"."Id", "o"."CustomerId", "o"."IsFulfilled"
+    FROM "Orders" AS "o"
+    WHERE "o"."Id" = @__id_0
+    LIMIT 1
+) AS "o1"
+LEFT JOIN (
+    SELECT "o0"."OrderId", "o0"."ProductId", "p"."Id", "p"."Name", "p"."Price"
+    FROM "OrderProducts" AS "o0"
+    INNER JOIN "Products" AS "p" ON "o0"."ProductId" = "p"."Id"
+) AS "s" ON "o1"."Id" = "s"."OrderId"
+ORDER BY "o1"."Id", "s"."OrderId", "s"."ProductId" 
+2024-12-17 01:13:22.5189 Info Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2024-12-17 01:13:22.5275 Info Executed action OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem) in 111461.5686ms 
+2024-12-17 01:13:22.5275 Info Executed endpoint 'OrderingSystem.Controllers.OrderController.GetOrderById (OrderingSystem)' 
+2024-12-17 01:13:22.5275 Info Request finished HTTP/2 GET https://localhost:44354/api/Order/1 - 200 - application/json;+charset=utf-8 111466.2947ms 
+2024-12-17 01:19:29.0399 Info Request starting HTTP/2 GET https://localhost:44354/swagger/index.html - - - 
+2024-12-17 01:19:29.2498 Info Application started. Press Ctrl+C to shut down. 
+2024-12-17 01:19:29.2498 Info Hosting environment: Development 
+2024-12-17 01:19:29.2498 Info Content root path: D:\yks\Trial\OrderingSystem\OrderingSystem 
+2024-12-17 01:19:29.3046 Info Request finished HTTP/2 GET https://localhost:44354/swagger/index.html - 200 - text/html;charset=utf-8 275.0173ms 
+2024-12-17 01:19:29.3064 Info Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - - - 
+2024-12-17 01:19:29.3064 Info Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - - - 
+2024-12-17 01:19:29.3064 Info Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript;+charset=utf-8 4.4224ms 
+2024-12-17 01:19:29.3687 Info Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 50.3450ms 
+2024-12-17 01:19:29.4373 Info Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - - - 
+2024-12-17 01:19:29.4523 Info Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 14.9991ms 
